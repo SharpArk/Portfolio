@@ -12,12 +12,18 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbFileTypeSql } from "react-icons/tb";
 ---
 
-<Layout title="Home" description="Welcome to my Astro site!">
+<Layout
+  title="Home - Jeisson Benitez"
+  description="I'm Jeisson Benitez, a full stack web developer and graphic designer from Medellín with experience in Astro, Next.js, Tailwind, NestJS, SQL, Illustrator, Photoshop, and Figma. Explore my projects, skills, and professional journey."
+>
   <main>
     <section
       class="flex flex-row justify-center items-center w-full h-screen gap-40 py-32"
     >
-      <div class="flex flex-col justify-center items-center w-1/4 relative">
+      <div
+        class="flex flex-col justify-center items-center w-1/4 relative"
+        id="Jeisson"
+      >
         <img class="h-[calc(2/3*100vh)] object-cover" src="/Jeisson.png" />
         <p
           class="absolute bottom-2 left-1/2 -translate-x-1/2 text-3xl bg-[#77777770] backdrop-blur p-4 rounded-full"
@@ -31,10 +37,12 @@ import { TbFileTypeSql } from "react-icons/tb";
       </div>
       <div
         class="w-2/5 h-full flex flex-col justify-center items-center gap-4 rounded-2xl bg-[#8000ff25] backdrop-blur-[15px] py-4"
+        id="Projects"
       >
-        <h3 class="text-4xl">PROYECTS</h3>
+        <h3 class="text-4xl" id="ProjectsTitle">PROYECTS</h3>
         <article
           class="flex items-center justify-center flex-col gap-2 bg-[#2B2B2B86] p-8 rounded-2xl w-5/6"
+          id="Projects1"
         >
           <a
             href="FullStackProyects"
@@ -48,8 +56,9 @@ import { TbFileTypeSql } from "react-icons/tb";
         </article>
         <article
           class="w-5/6 h-[calc(1/3*100vh)] bg-[url('/Jolyne.png')] bg-cover rounded-2xl relative"
+          id="Projects2"
         >
-          <article
+          <div
             class="absolute w-full h-full bg-gradient-to-t to-black from-[#00000000] rounded-2xl p-4"
           >
             <a
@@ -60,7 +69,7 @@ import { TbFileTypeSql } from "react-icons/tb";
                 ><FaLongArrowAltLeft /></span
               >
             </a>
-          </article>
+          </div>
         </article>
       </div>
     </section>
@@ -76,7 +85,10 @@ import { TbFileTypeSql } from "react-icons/tb";
         <article
           class="h-full w-full flex flex-col justify-center items-center p-16"
         >
-          <p class="text-2xl w-3/4 p-6 bg-[#212121] rounded-r-2xl relative">
+          <p
+            class="text-2xl w-3/4 p-6 bg-[#212121] rounded-r-2xl relative"
+            id="AboutMe1"
+          >
             <span class="text-purple">
               {"<p>"}
             </span>
@@ -94,8 +106,11 @@ import { TbFileTypeSql } from "react-icons/tb";
               class="w-4 h-full bg-green -left-4 top-0 rounded-l-2xl absolute"
             ></span>
           </p>
-          <p class="text-3xl my-5">Hard Skills:</p>
-          <div class="flex flex-col gap-5 justify-center items-center">
+          <p class="text-3xl my-5" id="HardSkillsTitle">Hard Skills:</p>
+          <div
+            class="flex flex-col gap-5 justify-center items-center"
+            id="HardSkills"
+          >
             <div class="flex gap-8">
               <div class="group relative flex flex-col items-center">
                 <span class="text-[100px] cursor-pointer">
@@ -185,6 +200,7 @@ import { TbFileTypeSql } from "react-icons/tb";
         </article>
         <article
           class="h-full w-full flex flex-col justify-center items-center p-16 border-y-16 text-2xl border-purple"
+          id="AboutMe2"
         >
           <p>
             My name is <span class="text-green">Jeisson Benitez Ortega</span>,
@@ -223,3 +239,101 @@ import { TbFileTypeSql } from "react-icons/tb";
     </section>
   </main>
 </Layout>
+
+<style>
+  body {
+    overflow-x: hidden;
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from("#Jeisson", {
+    duration: 1,
+    x: -200,
+    opacity: 0,
+    ease: "power2.out",
+  });
+
+  gsap.from("#ProjectsTitle", {
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.25,
+  });
+
+  gsap.from("#Projects", {
+    duration: 1,
+    y: 200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.5,
+  });
+
+  gsap.from("#Projects1", {
+    duration: 1,
+    y: 200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.5,
+  });
+
+  gsap.from("#Projects2", {
+    duration: 1,
+    y: 200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.5,
+  });
+
+  // ScrollTrigger animations
+
+  gsap.from("#AboutMe1", {
+    scrollTrigger: {
+      trigger: "#AboutMe1",
+    },
+    duration: 1,
+    x: -200,
+    opacity: 0,
+    ease: "power2.out",
+  });
+
+  gsap.from("#AboutMe2", {
+    scrollTrigger: {
+      trigger: "#AboutMe2",
+    },
+    duration: 1,
+    x: 200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.25,
+  });
+
+  gsap.from("#HardSkillsTitle", {
+    scrollTrigger: {
+      trigger: "#HardSkillsTitle",
+    },
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.5,
+  });
+
+  gsap.from("#HardSkills .text-\\[100px\\]", {
+    scrollTrigger: {
+      trigger: "#HardSkills",
+    },
+    duration: 1,
+    y: 200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.75,
+    stagger: 0.05,
+  });
+</script>
