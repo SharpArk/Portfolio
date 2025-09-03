@@ -1,0 +1,11 @@
+::view-transition-group(*) {
+  animation-duration: 300ms;
+}
+
+.nav {
+  view-transition-name: navbar;
+}
+
+.images {
+  view-transition-name: images;
+}

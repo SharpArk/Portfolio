@@ -1,7 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { FaLongArrowAltUp } from "react-icons/fa";
-import { FaLongArrowAltLeft } from "react-icons/fa";
+import { FaLongArrowAltUp, FaLongArrowAltLeft } from "react-icons/fa";
+import {
+  SiAstro,
+  SiNestjs,
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiFigma,
+} from "react-icons/si";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { TbFileTypeSql } from "react-icons/tb";
 ---
 
 <Layout title="Home" description="Welcome to my Astro site!">
@@ -28,9 +36,12 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
         <article
           class="flex items-center justify-center flex-col gap-2 bg-[#2B2B2B86] p-8 rounded-2xl w-5/6"
         >
-          <p class="text-5xl text-green border-b-4 border-green">
+          <a
+            href="FullStackProyects"
+            class="text-5xl text-green border-b-4 border-green"
+          >
             FullStack Web Development
-          </p>
+          </a>
           <p class="text-3xl text-center text-green">
             <FaLongArrowAltUp />
           </p>
@@ -41,17 +52,167 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
           <article
             class="absolute w-full h-full bg-gradient-to-t to-black from-[#00000000] rounded-2xl p-4"
           >
-            <p
+            <a
+              href="GraphicDesignProjects"
               class="text-green text-5xl border-b-4 border-green w-fit flex justify-center items-center gap-2"
             >
               Graphic Designer <span class="text-3xl"
                 ><FaLongArrowAltLeft /></span
               >
-            </p>
+            </a>
           </article>
         </article>
-        <section></section>
       </div>
     </section>
-  </main></Layout
->
+    <div
+      class="w-full h-32 flex justify-center items-center bg-purple backdrop-blur-[15px]"
+    >
+      <p class="text-6xl">Who is "Jeisson Benitez"?</p>
+    </div>
+    <section>
+      <div
+        class="flex justify-center items-center w-full h-[calc(100vh-8rem)] p-12"
+      >
+        <article
+          class="h-full w-full flex flex-col justify-center items-center p-16"
+        >
+          <p class="text-2xl w-3/4 p-6 bg-[#212121] rounded-r-2xl relative">
+            <span class="text-purple">
+              {"<p>"}
+            </span>
+            <br />
+            <span>
+              3 years ago I realized that my passion is making web pages,
+              nowadays I’m promoting my services to all the world - Jeisson
+              Benitez
+            </span>
+            <br />
+            <span class="text-purple">
+              {"<p/>"}
+            </span>
+            <span
+              class="w-4 h-full bg-green -left-4 top-0 rounded-l-2xl absolute"
+            ></span>
+          </p>
+          <p class="text-3xl my-5">Hard Skills:</p>
+          <div class="flex flex-col gap-5 justify-center items-center">
+            <div class="flex gap-8">
+              <div class="group relative flex flex-col items-center">
+                <span class="text-[100px] cursor-pointer">
+                  <SiAstro />
+                </span>
+                <span
+                  class="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
+                >
+                  Astro: Modern framework for building fast websites.
+                </span>
+              </div>
+              <div class="group relative flex flex-col items-center">
+                <span class="text-[100px] cursor-pointer">
+                  <RiNextjsFill />
+                </span>
+                <span
+                  class="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
+                >
+                  Next.js: React framework for scalable web applications.
+                </span>
+              </div>
+              <div class="group relative flex flex-col items-center">
+                <span class="text-[100px] cursor-pointer">
+                  <RiTailwindCssFill />
+                </span>
+                <span
+                  class="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
+                >
+                  Tailwind CSS: Utility-first CSS for fast and responsive
+                  styling.
+                </span>
+              </div>
+              <div class="group relative flex flex-col items-center">
+                <span class="text-[100px] cursor-pointer">
+                  <SiNestjs />
+                </span>
+                <span
+                  class="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
+                >
+                  NestJS: Efficient backend framework with Node.js.
+                </span>
+              </div>
+              <div class="group relative flex flex-col items-center">
+                <span class="text-[100px] cursor-pointer">
+                  <TbFileTypeSql />
+                </span>
+                <span
+                  class="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
+                >
+                  SQL: Language for database management.
+                </span>
+              </div>
+            </div>
+            <div class="flex gap-8">
+              <div class="group relative flex flex-col items-center">
+                <span class="text-[100px] cursor-pointer">
+                  <SiAdobeillustrator />
+                </span>
+                <span
+                  class="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
+                >
+                  Adobe Illustrator: Professional vector graphic design.
+                </span>
+              </div>
+              <div class="group relative flex flex-col items-center">
+                <span class="text-[100px] cursor-pointer">
+                  <SiAdobephotoshop />
+                </span>
+                <span
+                  class="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
+                >
+                  Adobe Photoshop: Image editing and retouching.
+                </span>
+              </div>
+              <div class="group relative flex flex-col items-center">
+                <span class="text-[100px] cursor-pointer">
+                  <SiFigma />
+                </span>
+                <span
+                  class="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 bg-black text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
+                >
+                  Figma: Collaborative tool for interface design.
+                </span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article
+          class="h-full w-full flex flex-col justify-center items-center p-16 border-y-16 text-2xl border-purple"
+        >
+          <p>
+            My name is Jeisson Benitez Ortega, I’ve lived in Medellin Antioquia
+            all my life, when I was younger, I studied in Maestro Fernando
+            Botero School, in this school I got a certificate with the SENA in
+            Technician in design and integration of multimedia content, nowadays
+            I’m studying software engineering in the Pascual Bravo University
+            institution I’m gonna show my soft skills:
+          </p>
+          <ul class="list-disc my-5">
+            <li>Teamwork: I work well in teams and value collaboration.</li>
+            <li>
+              Adaptability: I can adjust to new situations and challenges.
+            </li>
+            <li>
+              Problem-solving: I enjoy finding solutions to complex issues.
+            </li>
+            <li>
+              Communication: I can clearly express ideas and listen to others.
+            </li>
+          </ul>
+          <p>
+            The work I deliver is of best quality and you won’t regret having
+            sought me out. In fact, you’ll regret no seeking me out when I was
+            barely a year old
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>
