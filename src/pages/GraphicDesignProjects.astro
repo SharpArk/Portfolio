@@ -1,7 +1,161 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import GraphicLayout from "../layouts/GraphicLayout.astro";
 ---
 
-<Layout>
-  <h1>Graphic Design Projects</h1>
-</Layout>
+<GraphicLayout
+  title="Graphic Design Projects - Jeisson Benitez"
+  description="Explore my graphic design projects, showcasing creativity and skill in visual storytelling."
+>
+  <div class="-z-10 backdrop-blur-[50px] fixed w-full h-screen bg-[#00000070]">
+  </div>
+  <main>
+    <div
+      class="w-1/3 h-20 bg-purple [clip-path:polygon(0_0,_0%_100%,_100%_100%,_90%_50%,_100%_0)] flex justify-center items-center"
+    >
+      <p class="text-4xl">My Design Projects</p>
+    </div>
+    <section class="stack-section">
+      <article class="stack-article">
+        <div class="flex flex-col justify-center items-center">
+          <p class="border-b-2 border-white text-3xl top-40">2023</p>
+          <p
+            class="text-2xl p-1 px-4 rounded-full bg-[#208251] text-green mt-2"
+          >
+            Photoshop
+          </p>
+        </div>
+        <div class="w-[70%] relative">
+          <img
+            class="w-full rounded-3xl"
+            src="/Desings/interestelar background.png"
+            alt=""
+          />
+        </div>
+        <img
+          class="aspect-square rounded-full w-16 object-cover bg-white"
+          src="Jeisson.png"
+          alt=""
+        />
+      </article>
+
+      <article class="stack-article">
+        <div class="flex flex-col justify-center items-center">
+          <p class="border-b-2 border-white text-3xl top-40">2023</p>
+          <p
+            class="text-2xl p-1 px-4 rounded-full bg-[#208251] text-green mt-2"
+          >
+            Photoshop
+          </p>
+          <p
+            class="text-2xl p-1 px-4 rounded-full bg-[#208251] text-green mt-2"
+          >
+            Illustrator
+          </p>
+        </div>
+        <div class="w-[70%] relative">
+          <img class="w-full rounded-3xl" src="/Desings/poster.png" alt="" />
+        </div>
+        <img
+          class="aspect-square rounded-full w-16 object-cover bg-white"
+          src="Jeisson.png"
+          alt=""
+        />
+      </article>
+
+      <article class="stack-article">
+        <div class="flex flex-col justify-center items-center">
+          <p class="border-b-2 border-white text-3xl top-40">2023</p>
+          <p
+            class="text-2xl p-1 px-4 rounded-full bg-[#208251] text-green mt-2"
+          >
+            Illustrator
+          </p>
+        </div>
+        <div class="w-[70%] h-[70%] relative flex">
+          <img class="img" src="/Desings/Jolyne/1.jpg" alt="" />
+          <img class="img" src="/Desings/Jolyne/2.jpg" alt="" />
+          <img class="img" src="/Desings/Jolyne/3.jpg" alt="" />
+          <img class="img" src="/Desings/Jolyne/4.jpg" alt="" />
+          <img class="img" src="/Desings/Jolyne/5.jpg" alt="" />
+          <img class="img" src="/Desings/Jolyne/6.jpg" alt="" />
+        </div>
+        <img
+          class="aspect-square rounded-full w-16 object-cover bg-white"
+          src="Jeisson.png"
+          alt=""
+        />
+      </article>
+      <article class="stack-article">
+        <div class="flex flex-col justify-center items-center">
+          <p class="border-b-2 border-white text-3xl top-40">2025</p>
+          <p
+            class="text-2xl p-1 px-4 rounded-full bg-[#208251] text-green mt-2"
+          >
+            Photoshop
+          </p>
+        </div>
+        <div class="w-[70%] relative">
+          <img class="w-full rounded-3xl" src="/Desings/Jinx.jpg" alt="" />
+        </div>
+        <img
+          class="aspect-square rounded-full w-16 object-cover bg-white"
+          src="Jeisson.png"
+          alt=""
+        />
+      </article>
+    </section>
+  </main>
+</GraphicLayout>
+
+<style>
+  .stack-section {
+    position: relative;
+  }
+
+  .stack-article {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img {
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    filter: brightness(0.5) saturate(0.5);
+  }
+
+  .img:hover {
+    flex-grow: 6;
+    cursor: crosshair;
+    filter: brightness(1) saturate(1);
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const articles = document.querySelectorAll(".stack-article");
+
+  articles.forEach((article, i) => {
+    gsap.to(article, {
+      scale: 0.7, // se hace más pequeño
+      opacity: 0, // se desvanece un poco
+      scrollTrigger: {
+        trigger: article,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        pin: false,
+      },
+    });
+  });
+</script>
