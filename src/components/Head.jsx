@@ -74,14 +74,6 @@ function Head() {
           >
             Publications
           </a>
-          <a
-            className="text-6xl transition-colors duration-400 hover:text-green"
-            href="/Contact"
-            onMouseEnter={() => setActiveImage(4)}
-            onMouseLeave={() => setActiveImage(0)}
-          >
-            Contact and Social Networks
-          </a>
         </nav>
 
         <div
