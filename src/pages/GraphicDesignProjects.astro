@@ -6,7 +6,7 @@ import GraphicLayout from "../layouts/GraphicLayout.astro";
   title="Graphic Design Projects - Jeisson Benitez"
   description="Explore my graphic design projects, showcasing creativity and skill in visual storytelling."
 >
-  <div class="-z-10 backdrop-blur-[50px] fixed w-full h-screen bg-[#00000070]">
+  <div class="-z-10 backdrop-blur-[50px] fixed w-full h-screen bg-[#7f00ff10]">
   </div>
   <main>
     <div
@@ -147,8 +147,8 @@ import GraphicLayout from "../layouts/GraphicLayout.astro";
 
   articles.forEach((article, i) => {
     gsap.to(article, {
-      scale: 0.7, // se hace más pequeño
-      opacity: 0, // se desvanece un poco
+      scale: 0.7,
+      opacity: 0,
       scrollTrigger: {
         trigger: article,
         start: "top top",
