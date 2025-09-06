@@ -1,7 +1,181 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import {
+  SiAstro,
+  SiTailwindcss,
+  SiNestjs,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+} from "react-icons/si";
+import { RiNextjsFill } from "react-icons/ri";
 ---
 
-<Layout>
-  <h1>Full Stack Projects</h1>
+<Layout
+  title="FullStack Projects - Jeisson Benitez"
+  description="Some of my FullStack Projects"
+>
+  <div class="fixed w-full h-screen bg-[#00000050] blur-[250px]">
+    <div class="w-full h-full relative">
+      <div
+        class="aspect-square rounded-full w-2/5 bg-[#008CFF] -bottom-1/3 -left-1/3 absolute"
+      >
+      </div>
+      <div
+        class="aspect-square rounded-full w-2/5 bg-purple -top-1/3 -right-1/3 absolute"
+      >
+      </div>
+      <div
+        class="aspect-square rounded-full w-2/5 bg-[#FF00C8] absolute -right-1/3 -bottom-1/3"
+      >
+      </div>
+    </div>
+  </div>
+  <main>
+    <div
+      class="w-1/3 h-20 bg-purple [clip-path:polygon(0_0,_0%_100%,_100%_100%,_90%_50%,_100%_0)] flex justify-center items-center"
+    >
+      <p class="text-4xl">FullStack Projects</p>
+    </div>
+    <section
+      class="min-h-screen w-full flex flex-col justify-center items-center relative"
+      id="container"
+    >
+      <article
+        class="w-full h-screen flex justify-center items-center gap-5 z-10"
+      >
+        <div
+          class="w-fit h-fit flex justify-center items-center flex-col gap-4 p-8 bg-[#D9D9D910] shadow-[8px_4px_4px_0_#00000050] rounded-3xl"
+        >
+          <div class="w-full flex justify-end items-center gap-2">
+            <p class="text-5xl"><SiAstro /></p>
+            <p class="text-5xl"><SiTailwindcss /></p>
+          </div>
+          <img
+            src="/WebProjects/Catapulta.png"
+            class="w-[calc(50vw)] rounded-2xl"
+          />
+          <div class="flex gap-4 justify-center items-center">
+            <h3 class="title text-4xl">Catapulta</h3>
+            <a
+              href="https://catapulta.vercel.app"
+              target="_blank"
+              class="text-2xl text-green"
+              rel="noopener noreferrer">https://catapulta.vercel.app</a
+            >
+          </div>
+          <p class="text-xl text-center mt-4">
+            One Proyect maked with educative goals, It was used technologies
+            like Tailwind, Astro and React
+          </p>
+        </div>
+      </article>
+      <article
+        class="w-full h-screen flex justify-center items-center gap-5 z-10"
+      >
+        <div
+          class="w-fit h-fit flex justify-center items-center flex-col gap-4 p-8 bg-[#D9D9D910] shadow-[8px_4px_4px_0_#00000050] rounded-3xl"
+        >
+          <div class="w-full flex justify-end items-center gap-2">
+            <p class="text-5xl"><RiNextjsFill /></p>
+            <p class="text-5xl"><SiNestjs /></p>
+          </div>
+          <img
+            src="/WebProjects/SolyLuna.png"
+            class="w-[calc(50vw)] rounded-2xl"
+          />
+          <div class="flex gap-4 justify-center items-center">
+            <h3 class="title text-4xl">Sol y Luna</h3>
+            <a
+              href="https://www.solyluna.fashion"
+              target="_blank"
+              class="text-2xl text-green"
+              rel="noopener noreferrer">https://www.solyluna.fashion</a
+            >
+          </div>
+          <p class="text-xl text-center mt-4">
+            This page was created with goal of selling clothes to the world
+          </p>
+        </div>
+      </article>
+      <article
+        class="w-full h-screen flex justify-center items-center gap-5 z-10"
+      >
+        <div
+          class="w-fit h-fit flex justify-center items-center flex-col gap-4 p-8 bg-[#D9D9D910] shadow-[8px_4px_4px_0_#00000050] rounded-3xl"
+        >
+          <div class="w-full flex justify-end items-center gap-2">
+            <p class="text-5xl"><SiHtml5 /></p>
+            <p class="text-5xl"><SiCss3 /></p>
+            <p class="text-5xl"><SiJavascript /></p>
+          </div>
+          <img
+            src="/WebProjects/Timer.png"
+            class="w-[calc(50vw)] rounded-2xl"
+          />
+          <div class="flex gap-4 justify-center items-center">
+            <h3 class="title text-4xl">Timer</h3>
+            <a
+              href="https://catapulta.vercel.app"
+              target="_blank"
+              class="text-2xl text-green"
+              rel="noopener noreferrer">https://catapulta.vercel.app</a
+            >
+          </div>
+          <p class="text-xl text-center mt-4">
+            It was maked with the goal that It can be used for scramble the
+            rubik cube
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .title {
+    background-image: linear-gradient(
+      360deg,
+      var(--color-purple),
+      var(--color-white) 60%
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    position: relative;
+    /* Añade borde negro a la letra */
+  }
+
+  article {
+    position: sticky;
+    top: 0;
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const articles = document.querySelectorAll("article");
+
+  articles.forEach((article, i) => {
+    gsap.to(article, {
+      scale: 0.7,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: article,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        pin: false,
+      },
+    });
+  });
+
+  gsap.from("#container", {
+    duration: 0.5,
+    opacity: 0,
+    y: 100,
+  });
+</script>

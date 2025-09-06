@@ -14,7 +14,7 @@ import GraphicLayout from "../layouts/GraphicLayout.astro";
     >
       <p class="text-4xl">My Design Projects</p>
     </div>
-    <section class="stack-section">
+    <section class="stack-section" id="container">
       <article class="stack-article">
         <div class="flex flex-col justify-center items-center">
           <p class="border-b-2 border-white text-3xl top-40">2023</p>
@@ -157,5 +157,11 @@ import GraphicLayout from "../layouts/GraphicLayout.astro";
         pin: false,
       },
     });
+  });
+
+  gsap.from("#container", {
+    duration: 0.5,
+    opacity: 0,
+    y: 100,
   });
 </script>
