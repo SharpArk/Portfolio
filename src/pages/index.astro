@@ -239,6 +239,47 @@ import Bg from "../components/Bg.astro";
         </article>
       </div>
     </section>
+    <div
+      class="w-full h-32 flex justify-center items-center bg-purple backdrop-blur-[15px]"
+    >
+      <p class="text-6xl">Certifications</p>
+    </div>
+    <section
+      class="flex w-full h-screen justify-center items-center p-12 gap-6 relative overflow-hidden"
+    >
+      <div
+        class="absolute w-3xl aspect-square rounded-full bg-green blur-[250px] -right-1/3 -top-1/3"
+        id="sphere1"
+      >
+      </div>
+      <div
+        class="absolute w-3xl aspect-square rounded-full bg-purple blur-[250px] -left-1/3 -bottom-1/3"
+        id="sphere2"
+      >
+      </div>
+      <div
+        class="flex justify-center items-center gap-12 h-5/6"
+        id="certificate"
+      >
+        <img src="/certificate.jpg" class="h-full z-10" alt="" />
+        <p class="text-2xl w-1/2 p-6 bg-[#212121] rounded-r-2xl relative">
+          <span class="text-purple">
+            {"<p>"}
+          </span>
+          <br />
+          <span>
+            certificated with the SENA in digital content integration
+          </span>
+          <br />
+          <span class="text-purple">
+            {"<p/>"}
+          </span>
+          <span class="w-4 h-full bg-green -left-4 top-0 rounded-l-2xl absolute"
+          ></span>
+        </p>
+      </div>
+      <img src="/jbicon.svg" class="aspect-square w-2xl opacity-10" id="icon" />
+    </section>
   </main>
 </Layout>
 
@@ -337,5 +378,51 @@ import Bg from "../components/Bg.astro";
     ease: "power2.out",
     delay: 0.75,
     stagger: 0.05,
+  });
+
+  gsap.from("#sphere1", {
+    scrollTrigger: {
+      trigger: "#sphere2",
+    },
+    duration: 1,
+    x: 200,
+    y: -200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.25,
+  });
+
+  gsap.from("#sphere2", {
+    scrollTrigger: {
+      trigger: "#sphere2",
+    },
+    duration: 1,
+    x: -200,
+    y: 200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.25,
+  });
+
+  gsap.from("#icon", {
+    scrollTrigger: {
+      trigger: "#icon",
+    },
+    duration: 1,
+    y: 200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.5,
+  });
+
+  gsap.from("#certificate", {
+    scrollTrigger: {
+      trigger: "#certificate",
+    },
+    duration: 1,
+    x: -200,
+    opacity: 0,
+    ease: "power2.out",
+    delay: 0.75,
   });
 </script>

@@ -13,6 +13,10 @@ function Head() {
   useEffect(() => {
     if (isOpen) {
       setZIndexClass("z-20"); // cuando abre, sube al frente de inmediato
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
     } else {
       // cuando cierra, esperar 300ms antes de mandar atrás
       const timer = setTimeout(() => {
@@ -60,16 +64,8 @@ function Head() {
           </a>
           <a
             className="text-6xl transition-colors duration-400 hover:text-green"
-            href="/Certifications"
-            onMouseEnter={() => setActiveImage(2)}
-            onMouseLeave={() => setActiveImage(0)}
-          >
-            Education and Certifications
-          </a>
-          <a
-            className="text-6xl transition-colors duration-400 hover:text-green"
             href="/Publications"
-            onMouseEnter={() => setActiveImage(3)}
+            onMouseEnter={() => setActiveImage(2)}
             onMouseLeave={() => setActiveImage(0)}
           >
             Publications
@@ -77,15 +73,22 @@ function Head() {
         </nav>
 
         <div
-          className={`w-full h-full bg-purple transition-all duration-300 ${
+          className={`w-full h-full bg-purple transition-all duration-300 relative ${
             styles.images
           } ${isOpen ? "translate-x-0" : "translate-x-full"}`}
         >
           <img
             src={`/Jolyne.png`}
             alt=""
-            className={`h-full object-cover transition-opacity duration-500 ${
+            className={`h-full object-cover transition-opacity duration-500 absolute ${
               activeImage === 1 ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          <img
+            src={`/Desings/interestelar background.png`}
+            alt=""
+            className={`h-full object-cover transition-opacity duration-500 absolute ${
+              activeImage === 2 ? "opacity-100" : "opacity-0"
             }`}
           />
         </div>

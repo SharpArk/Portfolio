@@ -2,6 +2,7 @@
 import "../styles/global.css";
 const { title, description } = Astro.props;
 import Head from "../components/Head.jsx";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -23,6 +24,7 @@ import Head from "../components/Head.jsx";
   <body class="bg-background">
     <Head client:load />
     <slot />
+    <Footer />
   </body>
 </html>
 
