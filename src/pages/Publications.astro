@@ -1,7 +1,48 @@
 ---
+export const prerender = false;
 import Layout from "../layouts/Layout.astro";
+
+import axios from "axios";
+import { DOMAIN } from "astro:env/client";
+
+const data = await axios.get(`${DOMAIN}/api/blog`);
+const posts = data.data;
 ---
 
-<Layout>
-  <h1>Posts</h1>
+<Layout title="Publications" description="List of all publications">
+  <section class="py-12 bg-gradient-to-br min-h-screen">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          posts.map((post) => (
+            <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 flex flex-col overflow-hidden border border-blue-100">
+              {post.images && post.images.length > 0 && (
+                <img
+                  src={post.images[0].url}
+                  alt={post.title}
+                  class="h-48 w-full object-cover mb-4"
+                />
+              )}
+              <div class="flex-1 flex flex-col px-6 pb-6">
+                <h2 class="text-3xl font-bold mb-2 text-purple hover:text-green transition-colors duration-200">
+                  {post.title}
+                </h2>
+                <div class="flex items-center mt-auto">
+                  <span class="inline-block bg-blue-100 text-purple text-2xl px-3 py-1 rounded-full mr-2">
+                    {new Date(post.createdAt).toLocaleDateString()}
+                  </span>
+                  <a
+                    href={`/blog/${post.id}`}
+                    class="ml-auto text-purple hover:underline font-semibold text-xl"
+                  >
+                    Leer más →
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </Layout>

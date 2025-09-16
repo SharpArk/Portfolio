@@ -1,0 +1,53 @@
+---
+export const prerender = false;
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import axios from "axios";
+import { PrismaClient } from "@prisma/client";
+import { DOMAIN } from "astro:env/client";
+const { id } = Astro.params;
+const postId = parseInt(id);
+
+const prisma = new PrismaClient();
+const post = await prisma.post.findUnique({
+  where: { id: postId },
+  include: { images: true },
+});
+---
+
+<Layout
+  title={post ? post.title : "Publicación No Encontrada"}
+  description={post
+    ? post.description
+    : "No se encontró la publicación solicitada."}
+>
+  <section class="py-12 bg-gradient-to-br min-h-screen">
+    <div
+      class="max-w-3xl mx-auto px-4 bg-white rounded-2xl shadow-xl p-8 border border-blue-100"
+    >
+      {
+        post ? (
+          <>
+            <h1 class="text-4xl font-extrabold mb-6 text-purple">
+              {post.title}
+            </h1>
+            <p>{post.description}</p>
+            {post.images.map((image) => (
+              <img
+                src={image.url}
+                alt={post.title}
+                class="w-full h-auto mb-6 rounded-lg"
+              />
+            ))}
+            <p class="text-gray-700 mb-4 whitespace-pre-line">{post.content}</p>
+            <div class="text-sm text-gray-500 mt-4">
+              Publicado el: {new Date(post.createdAt).toLocaleDateString()}
+            </div>
+          </>
+        ) : (
+          <p class="text-red-500">Publicación no encontrada.</p>
+        )
+      }
+    </div>
+  </section></Layout
+>
