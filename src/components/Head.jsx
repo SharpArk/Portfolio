@@ -47,7 +47,7 @@ function Head() {
       </header>
 
       <div
-        className={`w-full h-full flex fixed transition-all duration-300 ${zIndexClass}`}
+        className={`w-full h-full flex flex-col sm:flex-row fixed transition-all duration-300 ${zIndexClass}`}
       >
         <nav
           className={`w-full h-full bg-[#170c2290] backdrop-blur-3xl transition-all duration-300 flex flex-col gap-6 justify-center items-center ${
@@ -73,7 +73,7 @@ function Head() {
         </nav>
 
         <div
-          className={`w-full h-full bg-purple transition-all duration-300 relative ${
+          className={`h-0 w-0 hidden sm:block sm:w-full sm:h-full bg-purple transition-all duration-300 relative ${
             styles.images
           } ${isOpen ? "translate-x-0" : "translate-x-full"}`}
         >

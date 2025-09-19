@@ -20,15 +20,18 @@ import Bg from "../components/Bg.astro";
   <Bg />
   <main>
     <section
-      class="flex flex-row justify-center items-center w-full h-screen gap-40 py-32"
+      class="flex flex-col sm:flex-row justify-center items-center w-full gap-20 xl:gap-40 py-4 sm:py-32"
     >
       <div
-        class="flex flex-col justify-center items-center w-1/4 relative"
+        class="flex flex-col justify-center items-center w-2/3 xl:w-1/4 h-full relative"
         id="Jeisson"
       >
-        <img class="h-[calc(2/3*100vh)] object-cover" src="/Jeisson.png" />
+        <img
+          class="w-2/3 p-6 xl:p-0 sm:w-auto sm:h-[calc(2/3*100vh)] xl:h-full object-cover"
+          src="/Jeisson.png"
+        />
         <p
-          class="absolute bottom-2 left-1/2 -translate-x-1/2 text-3xl bg-[#77777770] backdrop-blur p-4 rounded-full"
+          class="absolute -bottom-10 xl:bottom-2 left-1/2 -translate-x-1/2 text-xl xl:text-3xl bg-[#77777770] backdrop-blur p-4 rounded-full"
         >
           Jeisson Benitez
         </p>
@@ -38,17 +41,19 @@ import Bg from "../components/Bg.astro";
         </div>
       </div>
       <div
-        class="w-2/5 h-full flex flex-col justify-center items-center gap-4 rounded-2xl bg-[#8000ff25] backdrop-blur-[15px] py-4"
+        class="w-fit p-5 h-fit flex flex-row sm:flex-col justify-center items-center gap-4 rounded-2xl bg-[#8000ff25] backdrop-blur-[15px] py-4"
         id="Projects"
       >
-        <h3 class="text-4xl" id="ProjectsTitle">PROYECTS</h3>
+        <h3 class="hidden sm:block text-2xl sm:text-4xl" id="ProjectsTitle">
+          PROYECTS
+        </h3>
         <article
           class="flex items-center justify-center flex-col gap-2 bg-[#2B2B2B86] p-8 rounded-2xl w-5/6"
           id="Projects1"
         >
           <a
             href="FullStackProyects"
-            class="text-5xl text-green border-b-4 border-green"
+            class="xl:text-5xl text-2xl text-green border-b-4 border-green"
           >
             FullStack Web Development
           </a>
@@ -65,7 +70,7 @@ import Bg from "../components/Bg.astro";
           >
             <a
               href="GraphicDesignProjects"
-              class="text-green text-5xl border-b-4 border-green w-fit flex justify-center items-center gap-2"
+              class="text-green xl:text-5xl text-2xl border-b-4 border-green w-fit flex justify-center items-center gap-2"
             >
               Graphic Designer <span class="text-3xl"
                 ><FaLongArrowAltLeft /></span
@@ -76,19 +81,19 @@ import Bg from "../components/Bg.astro";
       </div>
     </section>
     <div
-      class="w-full h-32 flex justify-center items-center bg-purple backdrop-blur-[15px]"
+      class="w-full h-24 md:h-32 flex justify-center items-center bg-purple backdrop-blur-[15px]"
     >
-      <p class="text-6xl">Who is "Jeisson Benitez"?</p>
+      <p class="text-3xl sm:text-4xl md:text-6xl">Who is "Jeisson Benitez"?</p>
     </div>
     <section>
       <div
-        class="flex justify-center items-center w-full h-[calc(100vh-8rem)] p-12 overflow-y-hidden"
+        class="flex flex-col xl:flex-row justify-center items-center w-full h-[150vh] xl:h-[calc(100vh-8rem)] p-12 overflow-y-hidden"
       >
         <article
           class="h-full w-full flex flex-col justify-center items-center p-16"
         >
           <p
-            class="text-2xl w-3/4 p-6 bg-[#212121] rounded-r-2xl relative"
+            class="xl:text-2xl w-3/4 p-6 bg-[#212121] rounded-r-2xl relative"
             id="AboutMe1"
           >
             <span class="text-purple">
@@ -115,7 +120,7 @@ import Bg from "../components/Bg.astro";
           >
             <div class="flex gap-8">
               <div class="group relative flex flex-col items-center">
-                <span class="text-[100px] cursor-pointer">
+                <span class="text-[50px] xl:text-[100px] cursor-pointer">
                   <SiAstro />
                 </span>
                 <span
@@ -125,7 +130,7 @@ import Bg from "../components/Bg.astro";
                 </span>
               </div>
               <div class="group relative flex flex-col items-center">
-                <span class="text-[100px] cursor-pointer">
+                <span class="text-[50px] xl:text-[100px] cursor-pointer">
                   <RiNextjsFill />
                 </span>
                 <span
@@ -135,7 +140,7 @@ import Bg from "../components/Bg.astro";
                 </span>
               </div>
               <div class="group relative flex flex-col items-center">
-                <span class="text-[100px] cursor-pointer">
+                <span class="text-[50px] xl:text-[100px] cursor-pointer">
                   <RiTailwindCssFill />
                 </span>
                 <span
@@ -146,7 +151,7 @@ import Bg from "../components/Bg.astro";
                 </span>
               </div>
               <div class="group relative flex flex-col items-center">
-                <span class="text-[100px] cursor-pointer">
+                <span class="text-[50px] xl:text-[100px] cursor-pointer">
                   <SiNestjs />
                 </span>
                 <span
@@ -156,7 +161,7 @@ import Bg from "../components/Bg.astro";
                 </span>
               </div>
               <div class="group relative flex flex-col items-center">
-                <span class="text-[100px] cursor-pointer">
+                <span class="text-[50px] xl:text-[100px] cursor-pointer">
                   <TbFileTypeSql />
                 </span>
                 <span
@@ -168,7 +173,7 @@ import Bg from "../components/Bg.astro";
             </div>
             <div class="flex gap-8">
               <div class="group relative flex flex-col items-center">
-                <span class="text-[100px] cursor-pointer">
+                <span class="text-[50px] xl:text-[100px] cursor-pointer">
                   <SiAdobeillustrator />
                 </span>
                 <span
@@ -178,7 +183,7 @@ import Bg from "../components/Bg.astro";
                 </span>
               </div>
               <div class="group relative flex flex-col items-center">
-                <span class="text-[100px] cursor-pointer">
+                <span class="text-[50px] xl:text-[100px] cursor-pointer">
                   <SiAdobephotoshop />
                 </span>
                 <span
@@ -188,7 +193,7 @@ import Bg from "../components/Bg.astro";
                 </span>
               </div>
               <div class="group relative flex flex-col items-center">
-                <span class="text-[100px] cursor-pointer">
+                <span class="text-[50px] xl:text-[100px] cursor-pointer">
                   <SiFigma />
                 </span>
                 <span
@@ -201,7 +206,7 @@ import Bg from "../components/Bg.astro";
           </div>
         </article>
         <article
-          class="h-full w-full flex flex-col justify-center items-center p-16 border-y-16 text-2xl border-purple"
+          class="h-full w-full flex flex-col justify-center items-center p-16 border-y-16 2xl:text-xl border-purple"
           id="AboutMe2"
         >
           <p>
@@ -240,7 +245,7 @@ import Bg from "../components/Bg.astro";
       </div>
     </section>
     <div
-      class="w-full h-32 flex justify-center items-center bg-purple backdrop-blur-[15px]"
+      class="w-full h-24 md:h-32 flex justify-center items-center bg-purple backdrop-blur-[15px]"
     >
       <p class="text-6xl">Certifications</p>
     </div>
@@ -261,8 +266,10 @@ import Bg from "../components/Bg.astro";
         class="flex justify-center items-center gap-12 h-5/6"
         id="certificate"
       >
-        <img src="/certificate.jpg" class="h-full z-10" alt="" />
-        <p class="text-2xl w-1/2 p-6 bg-[#212121] rounded-r-2xl relative">
+        <img src="/certificate.jpg" class="h-2/3 xl:h-full z-10" alt="" />
+        <p
+          class="text-xl sm:text-2xl w-1/2 p-6 bg-[#212121] rounded-r-2xl relative"
+        >
           <span class="text-purple">
             {"<p>"}
           </span>
@@ -278,7 +285,11 @@ import Bg from "../components/Bg.astro";
           ></span>
         </p>
       </div>
-      <img src="/jbicon.svg" class="aspect-square w-2xl opacity-10" id="icon" />
+      <img
+        src="/jbicon.svg"
+        class="aspect-square w-xl hidden xl:block opacity-10"
+        id="icon"
+      />
     </section>
   </main>
 </Layout>
